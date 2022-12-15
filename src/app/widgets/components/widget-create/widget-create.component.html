@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">{{ pageTitle }}</div>
+    <div class="card-body">
+      <form [formGroup]="widgetCreateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="shape">Shape:</label>
+          <input class="form-control" formControlName="shape" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input class="form-control" formControlName="name" required />
+        </div>
+  
+        <div class="form-group">
+          <input type="hidden" formControlName="id" />
+        </div>
+  
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-secondary space-left-10" (click)="goBack()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

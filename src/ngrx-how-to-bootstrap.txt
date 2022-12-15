@@ -1,0 +1,25 @@
+1. Do npm install of @ngrx/store
+
+2. Add import to app.module.ts for StoreModule.forRoot()
+
+3. Add file app.state.ts for default global state
+
+4. Add beneath ./widgets module state folder
+
+5. Add actions, effects, etc. beneath state folder
+
+6. In widget-list TS component add ChangeDetectionStrategy, widgets$ observable, 
+   DI of store into constructor, and wired up both store.select and store.dispatch.
+
+7. In widget-list HTML change:
+
+	*ngFor="let w of widgets"
+
+   For:
+
+	*ngFor="let w of widgets$ | async"
+
+8. Modify widget.module.ts to add in imports to register the reducer and the effects:
+
+	StoreModule.forFeature('widgets', widgetReducer),
+        EffectsModule.forFeature([WidgetEffects])

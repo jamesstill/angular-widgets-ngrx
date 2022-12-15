@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    Widgets
+    <span class="pull-right">
+      <button class="btn btn-primary btn-sm width-80" [routerLink]="['widget-create']">Add</button>
+    </span>
+  </div>
+  <div class="card-body">
+
+    <h3 *ngIf="selectedWidget$ | async as sw">
+      <span>{{ sw.shape }} {{ sw.name }}</span>
+    </h3>
+
+    <div class="table-responsive-sm">
+      <table class="table table-sm mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let w of widgets$ | async">
+            <td>{{ w.shape }} {{ w.name }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm width-60" (click)="selectWidget(w)">Select</button>
+            </td>
+            <td>
+              <button class="btn btn-primary btn-sm width-60" [routerLink]="['widget-detail', w.id]">
+                View
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-primary btn-sm width-60" [routerLink]="['widget-update', w.id]">
+                Edit
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger btn-sm width-60" (click)="deleteWidget(w)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

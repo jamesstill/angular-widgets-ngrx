@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css";
+
+div.card-header {
+ font-size: xx-large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+.table {
+  margin-top: 10px
+}
+
+a {
+  text-decoration: none; 
+}
+
+.width-60 {
+  width:60px;
+}
+
+.width-80 {
+  width:80px;
+}
+
+.width-100 {
+  width:100px;
+}
+
+.width-120 {
+  width:120px;
+}
